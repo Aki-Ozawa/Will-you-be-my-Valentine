@@ -1,103 +1,85 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    height: 100%;
+body {
+    height: 100vh; /* Full viewport height */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0;
+    margin-top: 50px; /* Add space at the top of the viewport */
 }
 
-#btsContainer{
+#valentineContainer {
     display: flex;
-    flex-direction: row;
-    border: 1px solid blue;
-}
-
-#yesBtn, #noBtn{
-   width: 150px;
-   height: 50px;
-   color: white;
-   text-align: center;
-   cursor: pointer;
-   border-radius: 20px;
-}
-
-#yesBtn{
-    background-color: red;
-    margin-right: 60px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-}
-
-#yesBtn span, #noBtn span{
-    font-size: 20px;
-}
-
-#noBtn{
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-}
-
-#valentineImage{
-    width: 400px;
-}
-
-#valentineContainer{
-    border: 1px solid red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-#valentineMessage{
-    position: absolute;
-    top: calc(50px - 50px);
-    left: 31%;
-    /* transform: translateX(-31%); */
-    font-size: 50px;
+#valentineMessage {
+    font-size: 36px;
     color: rgba(181, 7, 7, 0.838);
     font-weight: bold;
-    pointer-events: none;
+    margin-bottom: 20px;
 }
 
-#yesBtn:active ~ #valentineMessage,
-#yesBtn:active ~ #valntineImage {
+#valentineImage {
+    width: 200px;
+    max-width: 100%; /* Ensure the image scales properly on smaller screens */
+}
+
+#btsContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#yesBtn, #noBtn {
+    width: 150px;
+    height: 50px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+#yesBtn {
+    background-color: red;
+    margin-right: 20px;
+}
+
+#noBtn {
+    background-color: black;
+}
+
+#newText, #newImage {
     visibility: hidden;
+    text-align: center;
 }
 
-#yesBtn:active{
-    margin-top: 250px;
-    
-}
-
-#valentineMessage, #valentineImage {
-    transition: top 0.5s ease; 
-  }
-
-#newText{
-    position: absolute;
-    top: 100px;
-    left: 50;
+#newText {
     font-size: 50px;
     font-family: "Roboto Condensed", sans-serif;
     font-weight: bold;
+    margin-top: 20px;
 }
 
 #newImage {
-    position: absolute;
-    top: 50;
-    left: 50;
-  }
+    margin-top: 20px;
+    max-width: 100%; /* Ensure the image scales properly */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

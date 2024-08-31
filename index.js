@@ -6,9 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var valentineMessage = document.getElementById("valentineMessage");
     var valentineImage = document.getElementById("valentineImage");
     var newText = document.getElementById("newText");
-    var newImage = docuemnt.getElementById("newImage");
-    var originalTopMessage = valentineMessage.offsetTop;
-    var originalTopImage = valentineImage.offsetTop;
+    var newImage = document.getElementById("newImage");
 
     noBtn.addEventListener("click", function() {
         var currentWidth = yesBtn.offsetWidth;
@@ -22,8 +20,20 @@ document.addEventListener("DOMContentLoaded", function() {
         var currentFontSize = parseInt(window.getComputedStyle(yesBtnText).fontSize);
         var newFontSize = currentFontSize + 1;
         yesBtnText.style.fontSize = newFontSize + "px";
+    });
 
-    })
+    yesBtn.addEventListener("click", function() {
+        yesBtn.style.visibility = "hidden";
+        noBtn.style.visibility = "hidden";
+        valentineMessage.style.visibility = "hidden";
+        valentineImage.style.visibility = "hidden";
 
-    
+        setTimeout(function() {
+            newText.style.visibility = "visible";
+            newImage.style.visibility = "visible";
+        }, 300);
+    });
+
 });
+    
+    
